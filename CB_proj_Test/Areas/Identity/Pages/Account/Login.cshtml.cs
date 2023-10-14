@@ -121,7 +121,7 @@ namespace CB_proj_Test.Areas.Identity.Pages.Account
                     if (Input.UserName == "Admin")
                     {
                         // Przykładowa logika dla użytkowników z rolą "Admin".
-                        return RedirectToAction("Index"); // Przykładowa akcja dla admina
+                        return LocalRedirect("/AdminPanel/GetUsers"); // Przykładowa akcja dla admina
                     }
                     else if (Input.UserName == "User")
                     {

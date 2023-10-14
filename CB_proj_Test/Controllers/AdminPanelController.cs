@@ -1,19 +1,21 @@
-﻿using CB_proj_Test.Models;
+﻿using CB_proj_Test.Data;
+using CB_proj_Test.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CB_proj_Test.Controllers
 {
     public class AdminPanelController : Controller
     {
-       
 
+        //private ApplicationDbContext db = new ApplicationDbContext();
 
+        private readonly UserManager<IdentityUser> userManager;
 
-        private readonly UserManager<UserModel> userManager;
-
-        public AdminPanelController(UserManager<UserModel> userManager)
+        public AdminPanelController(UserManager<IdentityUser> userManager)
         {
             this.userManager = userManager;
         }
@@ -62,8 +64,12 @@ namespace CB_proj_Test.Controllers
         }
 
         // GET: AdminPanelController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
+
+
+
+
             return View();
         }
 
